@@ -1,0 +1,44 @@
+@import 'src/styles/dimenssions';
+@import 'src/styles/fonts';
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .animation-container {
+      height: 400px;
+      width: 400px;
+      opacity: 0;
+      animation: fadeIn 1s 1 forwards;
+    }
+    .welcome-header {
+      font-family: $font-header;
+      font-weight: bold;
+      font-size: 45px;
+      opacity: 0;
+      animation: fadeIn 1.5s 0.7s 1 forwards;
+    }
+    .welcome-body {
+      font-family: $font-body;
+      padding: 20px;
+      font-size: 20px;
+      opacity: 0;
+      animation: fadeInLight 1.5s 1s 1 forwards;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to   { opacity: 1 }
+}
+
+@keyframes fadeInLight {
+  from { opacity: 0   }
+  to   { opacity: 0.6 }
+}

@@ -1,0 +1,117 @@
+@import 'src/styles/dimenssions';
+@import 'src/styles/fonts';
+@import 'src/styles/colors';
+
+.question-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 100%;
+  transition: transform 0.6s 0.4s; 
+  &.q1 {
+    transform: translateX(-100%)
+  }
+  &.q2 {
+    transform: translateX(-200%)
+  }
+  &.q3 {
+    transform: translateX(-300%)
+  }
+  &.q4 {
+    transform: translateX(-400%)
+  }
+  &.q5 {
+    transform: translateX(-500%)
+  }
+  .question {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 370px;
+    width: 500px;
+    text-align: center;
+    padding: 70px;
+    box-sizing: border-box;
+    background-color: #F8F8F8;
+    border-radius: 5px;
+    box-shadow: 0px 2px 2px #00000044;
+    font-family: $font-body;
+    opacity: 0.6;
+    transform: scale(0.9);
+    transition: opacity 0.4s, transform 0.4s;
+    &.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .text {
+      font-family: $font-header;
+      font-size: 20px;
+      line-height: 30px;
+    }
+    .input-container {
+      position: relative;
+      width: 100%;
+      height: 37px;
+      min-height: 10px;
+      .input {
+        position: absolute;
+        display: flex;
+        height: 100%;
+        padding: 0 4px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 17px;
+        outline: 0;
+        border: 0;
+        background-color: transparent;
+        &:focus + .input-line{
+          transform: scaleX(1);
+        }
+      }
+      .input-line {
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+        background-color: $color-primary;
+        bottom: 0;
+        z-index: 2;
+      }
+      .input-line-unfocused {
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: lightgray;
+        bottom: 0;
+        z-index: 1;
+      }
+      
+    }
+    
+    .buttons {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      .button {
+        width: 90px;
+        height: 35px;
+        font-size: 15px;
+        border: none;
+        outline: none;
+        background: linear-gradient(#2573E5, #1A4EB7);
+        border-radius: 5px;
+        color: $color-background;
+        &:hover {
+          opacity: 0.9;
+        }
+        &:active {
+          opacity: 1;
+          background: linear-gradient(#1A4EB7, #2573E5);
+        }
+      }
+    }
+  }
+}
